@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Staatliches');
+
+body{
+	margin: 0;
+}
+*{
+	font-family: Staatliches;
+}
+p{
+	color: rgba(0, 65, 106, 1.0);
+	font-size: 20px;
+	text-align: center;
+}
+.donut, .bar, .line{
+	background-color: white;
+	padding: 30px;
+}
+.donut, .bar {
+	border-bottom: 1px solid rgba(8,69,126,1);
+}
+header{
+	border-bottom: 1px solid rgba(8,69,126,1);
+}
+/*Kleur van de header*/
+.gradient {
+	background-image:
+		linear-gradient(
+		to right, 
+		rgba(0,0,0, 0.4),
+		white,
+		rgba(0,0,0, 0.4)
+    );
+}
+#logo{
+	width: 50%;
+	display: block;
+	margin: auto;
+	padding-top: 10px;
+}
+
+/*grid-area's*/
+.donut{
+	grid-area: donut;
+}
+.bar {
+	grid-area: bar;
+}
+.line {
+	grid-area: line;
+}
+
+
+/*breakpoints*/
+.content{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+        "donut"
+        "bar"
+		"line"; 
+}
+
+@media only screen and (min-width: 600px){
+	.content{
+		grid-template-columns: 2fr 2fr;
+		grid-template-areas:
+			"donut bar"
+			"line .."
+	}
+	#logo{
+		width: auto;
+	}
+	.donut{
+		margin-right: 5px;
+	}
+	.donut, .bar, .line{
+		border: 5px solid rgba(8, 69, 126, 1);
+		margin-top: 5px;
+		padding: 20px;
+	}
+	/*Achtergond wordt pas ingeladen wanneer het beeldscherm een minimale breedte van 600px heeft.*/
+	html{
+	background-image: url(../images/background.jpg);
+	background-size: 100%;
+	}
+	header{
+		border-bottom: 1px solid rgba(8,69,126,0);
+	}
+}
+
+@media only screen and (min-width: 900px){
+	.content{
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas:
+			"donut bar line";		
+	}
+	.donut{
+		margin-right: 0px;
+	}
+		.donut, .bar, .line{
+		margin-top: 50px;
+	}
+	
+}
+
+@media only screen and (min-width: 1366px) {
+	.content{
+		max-width: 1366px;
+		margin: auto;
+	}
+	
+	.donut, .bar{
+		margin-right: 30px;
+	}
+	#logo{
+		padding-left: 70px;
+	}
+}
