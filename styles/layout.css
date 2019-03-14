@@ -62,20 +62,17 @@ header{
 
 @media only screen and (min-width: 600px){
 	.content{
+		grid-gap: 5px;
 		grid-template-columns: 2fr 2fr;
 		grid-template-areas:
 			"donut bar"
-			"line .."
+			"line ."
 	}
 	#logo{
 		width: auto;
 	}
-	.donut{
-		margin-right: 5px;
-	}
 	.donut, .bar, .line{
 		border: 5px solid rgba(8, 69, 126, 1);
-		margin-top: 5px;
 		padding: 20px;
 	}
 	/*Achtergond wordt pas ingeladen wanneer het beeldscherm een minimale breedte van 600px heeft.*/
@@ -90,6 +87,7 @@ header{
 
 @media only screen and (min-width: 900px){
 	.content{
+		grid-gap: 30px;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-areas:
 			"donut bar line";		
@@ -109,9 +107,7 @@ header{
 		margin: auto;
 	}
 	
-	.donut, .bar{
-		margin-right: 30px;
-	}
+
 	#logo{
 		padding-left: 70px;
 	}
